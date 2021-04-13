@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>세나 보물쿠폰 입력값</title>
+	<style>
+		.btn2 {
+			background-color: #FFCCA9;
+			padding: 5px 5px;
+			margin: 1px;
+			border: none;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			font-size: 14px;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+	</style>
+ </head>
+
+
+<script language="javascript">
+function gen() 
+{
+	//alert("test");
+	 var uid = document.getElementById('cid').value;
+	//alert(uid);
+	//alert(code);
+	var code = document.getElementById('code').value;
+	var explain = document.getElementById('explain').value;
+
+
+	var ret = '<button class="btn" data-clipboard-text="' + code + '">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode(\'' + code + '\');" />' + uid + '. ' + code + ' - ' + explain + '</br>'
+
+	//alert(ret);
+//	document.getElementById("test").value = ret;
+//	document.getElementById("test").select();
+
+	let x = document.getElementsByClassName("code-text")[0];
+	x.innerText=ret; 
+   x.style.color="red";
+
+  
+  
+
+
+	//KEKESENA2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('KEKESENA2');" />42. KEKESENA2 - 토파즈 500개</br>
+}
+</script>
+
+
+
+
+<p><span>쿠폰 번호 : </span><input type="text" id="cid">
+<p><span>쿠폰 코드 : </span><input type="text" id="code">
+<p><span>쿠폰 보상 : </span><input type="text" id="explain">
+<p><input type="button" class="btn2" value="입력" onclick="gen();" />
+
+<p>
+      <span class="code-text">code</span>
+</p>
+
+
+ </body>
+</html>
