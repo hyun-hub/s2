@@ -58,17 +58,7 @@ function getParam(sname) {
 
     return sval;
 
-}
-   
-
-window.onload=function()
-	      {	      
-    var paramValue = getParam('my');
-	      alert(paramValue);
-    document.getElementsByTagName('input')[0].value = paramValue;
-	      }
-</script>   
-	      
+}  	      
 <script>
 var clipboard = new ClipboardJS('.btn');
 clipboard.on('success', function(e) {
@@ -122,6 +112,10 @@ function inputcode(code)
 <font size=2>
 <span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.43em 1em; font-size: 16px; border-radius: 3px; color: #ffffff;">"너의" 길드 화이팅!</span></br></br>
 	 <span>계정코드 : </span><input type="text" id="uid" style="width:300px"></br>
+<script type="text/javascript"> 
+  document.getElementById("uid").setAttribute('value', getParam("code"));
+</script>	
+								      
 <button class="btn" data-clipboard-text="SENAGA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAGA');" />43. SENAGA - 특수마부 10장</br>
 <button class="btn" data-clipboard-text="KEKESENA2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('KEKESENA2');" />42. KEKESENA2 - 토파즈 500개</br>
 <button class="btn" data-clipboard-text="SENAMOON">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAMOON');" />41. SENAMOON - 장비 소환 티켓 10장</br>
