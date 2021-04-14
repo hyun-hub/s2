@@ -38,30 +38,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src ="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 
-<script type="text/javascript">  
-    var Request = function() {  
-        this.getParameter = function(name) {  
-            var rtnval = '';  
-            var nowAddress = unescape(location.href);  
-            var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
-                    nowAddress.length)).split('&');  
-            for (var i = 0; i < parameters.length; i++) {  
-                var varName = parameters[i].split('=')[0];  
-                if (varName.toUpperCase() == name.toUpperCase()) {  
-                    rtnval = parameters[i].split('=')[1];  
-                    break;  
-                }  
-            }  
-            return rtnval;  
-        }  
-    }  
-    var request = new Request();  
-</script>  
+function getParam(sname) {
+
+    var params = location.search.substr(location.search.indexOf("?") + 1);
+
+    var sval = "";
+
+    params = params.split("&");
+
+    for (var i = 0; i < params.length; i++) {
+
+        temp = params[i].split("=");
+
+        if ([temp[0]] == sname) { sval = temp[1]; }
+
+    }
+
+    return sval;
+
+}
    
 <script type="text/javscript>  
 window.onload=function()
 	      {	      
-    var paramValue = request.getParameter('my');
+    var paramValue = getParam('my');
 	      alert(paramValue);
     document.getElementsByTagName('input')[0].value = paramValue;
 	      }
