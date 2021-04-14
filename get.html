@@ -58,6 +58,15 @@
     var request = new Request();  
 </script>  
    
+<script type="text/javscript>  
+window.onload=function()
+	      {	      
+    var paramValue = request.getParameter('my');
+	      alert(paramValue);
+    document.getElementsByTagName('input')[0].value = paramValue;
+	      }
+</script>   
+	      
 <script>
 var clipboard = new ClipboardJS('.btn');
 clipboard.on('success', function(e) {
@@ -157,11 +166,7 @@ function inputcode(code)
     
 </font>
 
-<script type="text/javscript>  
-    var paramValue = request.getParameter('my');
-	      alert(paramValue);
-    document.getElementsByTagName('input')[0].value = paramValue;
-</script>   
+
 	      
  </body>
 </html>
