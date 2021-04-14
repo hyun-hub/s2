@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>세나 보물쿠폰(너의 길드)</title>
+	<style>
+		.btn {
+			background-color: #87CEEB;
+			padding: 5px 5px;
+			margin: 1px;
+			border: none;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			font-size: 14px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		.btn2 {
+			background-color: #FFCCA9;
+			padding: 5px 5px;
+			margin: 1px;
+			border: none;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			font-size: 14px;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+	</style>
+ </head>
+ <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src ="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+<script type="text/javascript">  
+    var Request = function() {  
+        this.getParameter = function(name) {  
+            var rtnval = '';  
+            var nowAddress = unescape(location.href);  
+            var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,  
+                    nowAddress.length)).split('&');  
+            for (var i = 0; i < parameters.length; i++) {  
+                var varName = parameters[i].split('=')[0];  
+                if (varName.toUpperCase() == name.toUpperCase()) {  
+                    rtnval = parameters[i].split('=')[1];  
+                    break;  
+                }  
+            }  
+            return rtnval;  
+        }  
+    }  
+    var request = new Request();  
+</script>  
+   
+<script>
+var clipboard = new ClipboardJS('.btn');
+clipboard.on('success', function(e) {
+	console.log(e);
+});
+clipboard.on('error', function(e) {
+	console.log(e);
+});
+</script>
+
+<script language="javascript">
+function inputcode(code) 
+{
+	//alert("test");
+	 var uid = document.getElementsByTagName('input')[0].value
+	//alert(uid);
+	//alert(code);
+	$.ajax({
+		type: 'POST',
+		url: 'https://couponview.netmarble.com/coupon/sknightsmmo/1290/apply',
+		data: {
+			'pid': uid,
+			'channelCode': 100,
+			'couponCode': code,
+			'worldId': '',
+			'nickname': ''
+		},
+		success: function (data) {
+			if (data['resultCode'] === 'SUCCESS') {
+				alert('성공');
+			}
+			else if (data['resultCode'] === 'NOT_EXISTS_PID') {
+				alert('계정코드 오류');
+			}
+			else if (data['resultCode'] === 'COUPON_ALREADY_USE') {
+				alert('이미 사용한 쿠폰');
+			}
+			else if (data['resultCode'] === 'COUPON_WRONG') {
+				alert('잘못된 쿠폰 코드');
+			}
+			else {
+				alert('모르는 응답코드');
+			}
+		}
+	})
+}
+</script>
+
+<script type="text/javscript>  
+    var paramValue = request.getParameter('my');
+    document.getElementsByTagName('input')[0].value = paramValue;
+</script>    
+
+<font size=2>
+<span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.43em 1em; font-size: 16px; border-radius: 3px; color: #ffffff;">"너의" 길드 화이팅!</span></br></br>
+	 <span>계정코드 : </span><input type="text" id="uid" style="width:300px"></br>
+<button class="btn" data-clipboard-text="SENAGA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAGA');" />43. SENAGA - 특수마부 10장</br>
+<button class="btn" data-clipboard-text="KEKESENA2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('KEKESENA2');" />42. KEKESENA2 - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="SENAMOON">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAMOON');" />41. SENAMOON - 장비 소환 티켓 10장</br>
+<button class="btn" data-clipboard-text="2STHGINNEVES">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('2STHGINNEVES');" />40. 2STHGINNEVES - 파괴의 파편 10개</br>
+<button class="btn" data-clipboard-text="CHECKCHECK">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('CHECKCHECK');" />39. CHECKCHECK - 장비 소환 티켓 10장</br>
+<button class="btn" data-clipboard-text="COCOJOA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('COCOJOA');" />38. COCOJOA - 소탕권 50개</br>	
+<button class="btn" data-clipboard-text="2S2E2V2E2N">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('2S2E2V2E2N');" />37. 2S2E2V2E2N - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="SENAINSSA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAINSSA');" />36. SENAINSSA - 루비 500개</br>	 
+<button class="btn" data-clipboard-text="SK2FORUM">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SK2FORUM');" />35. SK2FORUM - 골드던전 티켓 5장</br>
+<button class="btn" data-clipboard-text="2SEVEN2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('2SEVEN2');" />34. 2SEVEN2 - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="GREATEVENT">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('GREATEVENT');" />33. GREATEVENT - 전설 방어구 소환권 1개</br>
+<button class="btn" data-clipboard-text="TPQMSSKDLCM2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('TPQMSSKDLCM2');" />32. TPQMSSKDLCM2 - 루비 500개</br>
+<button class="btn" data-clipboard-text="7INFINITE7">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('7INFINITE7');" />31. 7INFINITE7 - 일반 룬 1000개</br>
+<button class="btn" data-clipboard-text="HISENA2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('HISENA2');" />30. HISENA2 - 문스톤 300개</br>
+<button class="btn" data-clipboard-text="SKNIGHTS2">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SKNIGHTS2');" />29. SKNIGHTS2 - 영웅 소환티켓 5회 </br>
+<button class="btn" data-clipboard-text="SEYAHO">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SEYAHO');" />28. SEYAHO - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="SENAFOREVER">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAFOREVER');" />27. SENAFOREVER - 전설무기 소환권</br>
+<button class="btn" data-clipboard-text="UPDATE">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('UPDATE');" />26. UPDATE - 펫 소환 티켓 5개</br>
+<button class="btn" data-clipboard-text="IMSOHOT">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('IMSOHOT');" />25. IMSOHOT- 장비소환5장</br>
+<button class="btn" data-clipboard-text="OLDRUDY">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('OLDRUDY');" />24. OLDRUDY - 루비 500개</br>
+<button class="btn" data-clipboard-text="HAPPYCOCO">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('HAPPYCOCO');" />23. HAPPYCOCO - 루비 1000개</br>
+<button class="btn" data-clipboard-text="LADYKILLER">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('LADYKILLER');" />22. LADYKILLER - 희귀 엘릭서 1000개</br>
+<button class="btn" data-clipboard-text="WOWSENA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('WOWSENA');" />21. WOWSENA - 무환의 탑 입장 티켓 5개</br>
+<button class="btn" data-clipboard-text="REINFORCE">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('REINFORCE');" />20. REINFORCE - 엘릭서 1000개</br>
+<button class="btn" data-clipboard-text="LEGENDSENA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('LEGENDSENA');" />19. LEGENDSENA - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="KEEEEE">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('KEEEEE');" />18. KEEEEE - 고급 엘릭서 1000개</br>
+<button class="btn" data-clipboard-text="ONESHOT">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('ONESHOT');" />17. ONESHOT - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="LADY">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('LADY');" />16. LADY - 골드 300,000개 </br>
+<button class="btn" data-clipboard-text="DUDUDUNGA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('DUDUDUNGA');" />15. DUDUDUNGA - 문스톤 300개</br>
+<button class="btn" data-clipboard-text="4RAID4">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('4RAID4');" />14. 4RAID4 - 고급 룬 1000개</br>
+<button class="btn" data-clipboard-text="8RAID8">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('8RAID8');" />13. 8RAID8 - 희귀 룬 1000개</br>
+<button class="btn" data-clipboard-text="EVAN">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('EVAN');" />12. EVAN - 토파즈 500개</br>
+<button class="btn" data-clipboard-text="EVENTMATJIB">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('EVENTMATJIB');" />11. EVENTMATJIB - 전설 영웅 소환권 1개</br>
+<button class="btn" data-clipboard-text="VELVET">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('VELVET');" />10. VELVET - 전설 방어구 소환권 1개</br>
+<button class="btn" data-clipboard-text="DUGUDUGU">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('DUGUDUGU');" />9. DUGUDUGU - 장비 소환 티켓 5개</br>
+<button class="btn" data-clipboard-text="NEWSCENARIO">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('NEWSCENARIO');" />8. NEWSCENARIO - 영웅 소환 티켓 5개</br>
+<button class="btn" data-clipboard-text="COMINGSOON">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('COMINGSOON');" />7. COMINGSOON - 펫 소환 티켓 5개</br>
+<button class="btn" data-clipboard-text="GOGOSENA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('GOGOSENA');" />6. GOGOSENA -루비 1000개</br>
+<button class="btn" data-clipboard-text="BIGUPDATE ">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('BIGUPDATE ');" />5. BIGUPDATE  - 골드 300,000개</br>
+<button class="btn" data-clipboard-text="KINGADEL">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('KINGADEL');" />4. KINGADEL - 펫 소환 티켓 10개</br>
+<button class="btn" data-clipboard-text="DANJANGNIMLUV">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('DANJANGNIMLUV');" />3. DANJANGNIMLUV - 고급지도 500개</br>
+<button class="btn" data-clipboard-text="SENAYAHO ">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAYAHO ');" />2. SENAYAHO  - 전설 방어구 소환권 1개</br>
+<button class="btn" data-clipboard-text="GUMANKM"> 복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('GUMANKM ');" />1. GUMANKM - 전설 마법 부여 주문서 30개</br>
+    
+</font>
+ </body>
+</html>
