@@ -40,6 +40,28 @@
 	
 				  
 <script language="javascript">
+
+    function isEmpty(str){
+         
+        if(typeof str == "undefined" || str == null || str == "")
+            return true;
+        else
+            return false ;
+    }
+     
+    /**
+     * 문자열이 빈 문자열인지 체크하여 기본 문자열로 리턴한다.
+     * @param str           : 체크할 문자열
+     * @param defaultStr    : 문자열이 비어있을경우 리턴할 기본 문자열
+     */
+    function nvl(str, defaultStr){
+         
+        if(typeof str == "undefined" || str == null || str == "")
+            str = defaultStr ;
+         
+        return str ;
+    }
+	
   function init() 
 {
    var urlParams = location.search.split(/[?&]/).slice(1).map(function(paramPair) {
@@ -54,7 +76,8 @@
 
     }, {});
 	
-    document.getElementById("uid").value = urlParams.code;
+    document.getElementById("uid").value = nvl(urlParams.code, "");
+    
   }
 </script>
 	
@@ -114,7 +137,7 @@ function inputcode(code)
 
 
 <font size=2>
-<span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.43em 1em; font-size: 16px; border-radius: 3px; color: #ffffff;">"너의" 길드 화이팅!6</span></br></br>
+<span style="background: linear-gradient(to right, #ffa7a3, #5673bd); padding: 0.43em 1em; font-size: 16px; border-radius: 3px; color: #ffffff;">"너의" 길드 화이팅!</span></br></br>
 	 <span>계정코드 : </span><input type="text" id="uid" style="width:300px"></br>
 								      
 <button class="btn" data-clipboard-text="SENAGA">복사</button><input type="button" class="btn2" value="입력" onclick="inputcode('SENAGA');" />43. SENAGA - 특수마부 10장</br>
