@@ -40,9 +40,28 @@ function gen()
 //	document.getElementById("test").value = ret;
 //	document.getElementById("test").select();
 
-	let x = document.getElementsByClassName("code-text")[0];
+	var x = document.getElementsByClassName("code-text")[0];
 	x.innerText=ret; 
-   x.style.color="red";
+    x.style.color="red";
+
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(x);
+        range.select();
+		document.execCommand('copy');
+		alert('copy');
+    } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(x);
+        selection.removeAllRanges();
+        selection.addRange(range);
+		document.execCommand('copy');
+		alert('copy');
+    } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+		alert('fail');
+    }
 
   
   
