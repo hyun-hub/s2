@@ -51,7 +51,7 @@ function inputcode(code) {
     //alert(code);
     $.ajax({
         type: 'POST',
-        url: 'https://couponview.netmarble.com/coupon/sknightsmmo/1290/apply',
+        url: 'https://couponview.netmarble.com/coupon/sknightsmmo/1304/apply',
         data: {
             'pid': uid,
             'channelCode': 100,
